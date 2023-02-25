@@ -27,7 +27,7 @@ function nextSequence(){
 $("#"+randomChosenColor).fadeTo(100, 0.3, function() { $(this).fadeTo(500, 1.0); });
 
 function play(names)  {
-var audio=new Audio("./sounds/"+names+".mp3");
+var audio=new Audio("./"+names+".mp3");
   audio.play();
   }
   $("#level-title").text("Level "+ level);
@@ -47,7 +47,7 @@ $(".btn").click(function(){
   userChosenColor=this.id;
   index_Of_User_Color=buttonColors.indexOf(userChosenColor);
   userClickedPattern.push(index_Of_User_Color);
-  var audioUser=new Audio("./sounds/"+userChosenColor+".mp3");
+  var audioUser=new Audio("./"+userChosenColor+".mp3");
   audioUser.play();
   $("."+userChosenColor).addClass("pressed");
   setTimeout(function(){
@@ -73,7 +73,7 @@ function checkAnswer(){
 
     }
   else{
-    var audioWrong =new Audio("./sounds/wrong.mp3");
+    var audioWrong =new Audio("./wrong.mp3");
     audioWrong.play();
     $("body").addClass("game-over");
     setTimeout(function(){
